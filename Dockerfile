@@ -1,5 +1,7 @@
 FROM bitnami/laravel
 
+RUN apt install -y wget
+
 WORKDIR /var/www
 
 RUN rm -rf api
