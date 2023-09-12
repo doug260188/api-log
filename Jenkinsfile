@@ -1,6 +1,6 @@
 pipeline {
     agent 
-      label {'node0'}
+    label {node0}
     
     stages {
         stage('BUILD') {
