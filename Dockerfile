@@ -1,6 +1,7 @@
 FROM bitnami/laravel
 
 RUN apt update && apt install wget -y
+RUN apt install gzip
 
 WORKDIR /var/www
 
