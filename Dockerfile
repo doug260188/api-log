@@ -1,6 +1,6 @@
 FROM bitnami/laravel
 
-RUN yum install -y wget
+RUN apt update && install -y wget
 
 WORKDIR /var/www
 
