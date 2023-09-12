@@ -6,8 +6,8 @@ RUN apt install unrar
 WORKDIR /var/www
 
 RUN rm -rf api
-RUN wget https://github.com/doug260188/api-log/blob/main/api.rar
-RUN unrar x api.rar
+RUN wget https://github.com/doug260188/api-log/blob/main/api.tar.gz
+RUN tar -czvf api.tar.gz
 
 WORKDIR /var/www/api
 
