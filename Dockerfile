@@ -1,5 +1,11 @@
 FROM bitnami/laravel
 
+WORKDIR /var/www
+
+RUN rm -rf api
+RUN wget https://github.com/doug260188/api-log/blob/main/api.rar
+RUN tar -zxvf api.rar
+
 WORKDIR /var/www/api
 
 COPY . .
