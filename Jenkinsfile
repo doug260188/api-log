@@ -5,6 +5,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 sh 'wget https://github.com/doug260188/api-log/blob/main/Dockerfile'
+                sh ' pwd'
                 sh "docker build -t ${JOB_NAME}:latest -f Dockerfile ."
 
             }
