@@ -1,13 +1,5 @@
 FROM bitnami/laravel
 
-RUN apt update && apt install wget -y
-RUN apt install gzip
-
-WORKDIR /var/www
-
-RUN rm -rf api
-RUN wget https://github.com/doug260188/api-log/blob/main/api.tar.gz
-RUN tar -czvf api.tar.gz
 
 WORKDIR /var/www/api
 
