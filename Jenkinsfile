@@ -8,8 +8,10 @@ pipeline {
                     // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                     sh 'git clone http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc.git'
                 }
+            }
+        }
 
-    stages {
+    
         stage('BUILD') {
             steps {
                 //sh ''
