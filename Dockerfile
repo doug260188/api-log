@@ -1,9 +1,7 @@
 FROM node:16.14.2 as build-stage
 
-RUN git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/quasar
 
-
-WORKDIR /quasar
+WORKDIR /app
 
 COPY . .
 
