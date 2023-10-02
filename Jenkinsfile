@@ -2,15 +2,15 @@ pipeline {
     agent { label 'node1' }
 
     stages {
-        stage('Clonar Repositório') {
-            steps {
-                script {
+        //stage('Clonar Repositório') {
+            //steps {
+                //script {
                     // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
-                    sh 'rm -rf quasar/'
-                    sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/quasar'
-                }
-            }
-        }
+                    //sh 'rm -rf quasar/'
+                    //sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/quasar'
+                //}
+            //}
+        //}
 
     
         stage('BUILD') {
