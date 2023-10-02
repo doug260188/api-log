@@ -5,6 +5,8 @@ WORKDIR /app
 
 COPY . .
 
+RUN ls -ltr
+
 RUN touch .env
 
 RUN echo "API_URL=http://201.71.149.227:9098" > .env 
