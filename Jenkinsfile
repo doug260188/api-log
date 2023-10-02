@@ -16,8 +16,8 @@ pipeline {
         stage('BUILD') {
             steps {
                 //sh ''
-                sh '''docker build -t ${JOB_NAME}:latest .'''
-                sh ' rm Docke*'
+                sh '''docker build -t ${JOB_NAME}:latest /opt/jenkins-dados/workspace/test1/app/ .'''
+                //sh ' rm Docke*'
 
             }
         }
