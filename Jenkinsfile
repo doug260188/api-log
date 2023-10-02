@@ -17,7 +17,7 @@ pipeline {
             steps {
                 //sh ''
                 sh 'cd app/'
-                sh "docker build -t ${JOB_NAME}:latest -f Dockerfile ."
+                sh "docker build -t ${JOB_NAME}:latest ."
                 sh ' rm Docke*'
 
             }
