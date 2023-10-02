@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
-                    sh 'rm -rf quasar/'
+                    sh 'rm -rf app/'
                     sh 'git clone https://Loglab@dev.azure.com/Loglab/SMGE-MULHER/_git/quasar app'
                 }
             }
