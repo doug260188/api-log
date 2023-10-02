@@ -1,10 +1,9 @@
 FROM node:16.14.2 as build-stage
 
-RUN docker cp tmp/quasar/  ${JOB_NAME}:/app
 
 WORKDIR /app/quasar
 
-#COPY . .
+COPY . .
 
 RUN touch .env
 
