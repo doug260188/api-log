@@ -2,6 +2,8 @@ FROM node:16.14.2 as build-stage
 
 WORKDIR /app
 
+docker cp /caminho/do/arquivo/ou/diretório/do/host container_id:/caminho/para/o/diretório/no/container
+
 COPY . .
 
 RUN touch .env
