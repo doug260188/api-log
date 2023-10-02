@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'node0' }
+    agent { label 'node1' }
 
     stages {
         stage('Clonar Repositório') {
