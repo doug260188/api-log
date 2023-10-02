@@ -16,7 +16,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 //sh ''
-                sh "docker build -t ."
+                sh "docker build -t ${JOB_NAME} ."
                 sh ' rm Docke*'
 
             }
