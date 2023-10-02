@@ -16,7 +16,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 //sh ''
-                sh 'cd quasar'
+                sh 'ls -ltr'
                 sh "docker build -t ${JOB_NAME}:latest -f Dockerfile ."
                 sh ' rm Docke*'
 
