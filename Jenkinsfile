@@ -16,7 +16,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 //sh ''
-                sh 'cd app/'
+                //sh 'cd app/'
                 sh "docker build ."
                 sh ' rm Docke*'
 
