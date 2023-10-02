@@ -5,6 +5,8 @@ WORKDIR /app
 
 COPY . .
 
+WORKDIR /quasar
+
 RUN ls -ltr
 
 RUN touch .env
