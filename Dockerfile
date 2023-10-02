@@ -1,16 +1,16 @@
 FROM node:16.14.2 as build-stage
 
-WORKDIR /app
+RUN docker cp tmp/quasar/  ${JOB_NAME}:/app
 
-docker cp /caminho/do/arquivo/ou/diretório/do/host container_id:/caminho/para/o/diretório/no/container
+WORKDIR /app/quasar
 
-COPY . .
+#COPY . .
 
 RUN touch .env
 
 RUN echo "API_URL=http://201.71.149.227:9098" > .env 
 
-#RUN echo 'APP_NAME=DESEMPENHO' >> .env
+RUN echo 'APP_NAME=DESEMPENHO' >> .env
 
 RUN yarn global add @quasar/cli
 
