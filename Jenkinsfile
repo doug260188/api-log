@@ -26,7 +26,7 @@ pipeline {
         stage('DEPLOY') {
             steps {
 
-                sh '''docker run -itd --restart=always --name ${JOB_NAME} -p9099:80 --privileged ${JOB_NAME}:latest'''
+                sh '''docker run -itd --restart=always --name ${JOB_NAME} -p909:80 --privileged ${JOB_NAME}:latest'''
                 //sh "docker run -itd --restart=always --name ${JOB_NAME} -p9098:8080 --privileged ${JOB_NAME}:latest"
 
             }
