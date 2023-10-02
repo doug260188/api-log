@@ -16,7 +16,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 //sh ''
-                sh 'ls -ltr'
+                sh 'cd app/'
                 sh "docker build -t ${JOB_NAME}:latest -f Dockerfile ."
                 sh ' rm Docke*'
 
