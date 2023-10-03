@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
                     // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
-                    sh 'rm -rf app/'
-                    sh 'git clone https://Loglab@dev.azure.com/Loglab/SMGE-MULHER/_git/quasar app'
+                    sh 'rm -rf api/'
+                    sh 'git clone https://Loglab@dev.azure.com/Loglab/SMGE-MULHER/_git/api api'
                 }
             }
         }
@@ -25,8 +25,9 @@ pipeline {
         stage('DEPLOY') {
             steps {
 
-                sh '''docker run -itd --restart=always --name ${JOB_NAME} -p909:80 --privileged ${JOB_NAME}:latest'''
-                //sh "docker run -itd --restart=always --name ${JOB_NAME} -p9098:8080 --privileged ${JOB_NAME}:latest"
+                //sh '''docker run -itd --restart=always --name ${JOB_NAME} -p9099:80 --privileged ${JOB_NAME}:latest'''
+                //sh '''docker run -itd --restart=always --name ${JOB_NAME} -p909:80 --privileged ${JOB_NAME}:latest'''
+                sh ''docker run -itd --restart=always --name ${JOB_NAME} -p9098:8080 --privileged ${JOB_NAME}:latest'''
 
             }
         }
