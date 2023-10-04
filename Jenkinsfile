@@ -17,7 +17,7 @@ pipeline {
             } 
         }
 
-    
+    }
         stage('BUILD') {
             steps {
                 sh '''docker build -t smge-mulher-api-homologacao -f /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api/Dockerfile .'''
