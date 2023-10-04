@@ -8,15 +8,14 @@ pipeline {
                 // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                 sh 'rm -rf api/'
                 sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
+                sh 'ls -ltr'
             } 
         }
 
     
         stage('BUILD') {
             steps {
-                //sh ''
-                sh ''' cd /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api'''
-                sh '''docker build .'''
+                sh '''docker build -t smge-mulher-api-homologacao -f /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api/Dockerfile .'''
                 //sh '''docker build -t ${JOB_NAME}:latest -f /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api/Dockerfile .'''
                 //sh ' rm Docke*'
 
