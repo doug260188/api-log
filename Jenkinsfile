@@ -16,7 +16,7 @@ pipeline {
             steps {
                 //sh ''
                 sh ''' cd /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api'''
-                sh '''docker build -t ${JOB_NAME}:latest .'''
+                sh '''docker build .'''
                 //sh '''docker build -t ${JOB_NAME}:latest -f /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api/Dockerfile .'''
                 //sh ' rm Docke*'
 
