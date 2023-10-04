@@ -4,11 +4,11 @@ pipeline {
     stages {
         stage('Clonar Repositório') {
             steps {
+               
                 // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                 sh 'rm -rf api/'
                 sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
-                }
-            }
+            } 
         }
 
     
@@ -33,3 +33,4 @@ pipeline {
     }
 
 }
+CMD ["catalina.sh", "run"]
