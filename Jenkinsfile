@@ -17,7 +17,7 @@ pipeline {
 
         stage('BUILD') {
             steps {
-                sh 'docker build -t ${JOB_NAME}:latest -f Dockerfile /opt/jenkins-dados/workspace/SMGE-MULHER-API-HOMOLOGACAO/api'
+                sh 'docker build -t ${JOB_NAME}:latest -f Dockerfile /opt/jenkins/workspace/mulher-api-homol/api'
             }
         }
         
