@@ -1,31 +1,32 @@
 pipeline {
     agent any
-    //agent {label "node1"}
-
+    
     stages {
-        stage('Clonar Repositório') {
+        stage('Clone Repository') {
             steps {
-                // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                 script {
+                    // Limpe o diretório de trabalho anterior, se necessário
                     sh 'rm -rf api/'
+                    
+                    // Adicione a chave SSH do Azure DevOps ao arquivo known_hosts
+                    sh 'ssh-keyscan -t rsa ssh.dev.azure.com >> ~/.ssh/known_hosts'
+                    
+                    // Clone o repositório Azure DevOps via SSH
                     sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
-                    dir('api') {
-                        sh 'ls -ltr'
-                    }
                 }
             }
         }
-
-        stage('BUILD') {
-            steps {
-                sh 'docker build -t ${JOB_NAME}:latest -f Dockerfile .'
-            }
+        
+        // Outros estágios do seu pipeline podem seguir aqui
+    }
+    
+    post {
+        success {
+            // Ações a serem executadas em caso de sucesso
         }
         
-        stage('DEPLOY') {
-            steps {
-                sh 'docker run -itd --restart=always --name ${JOB_NAME} -p9098:8080 --privileged ${JOB_NAME}:latest'
-            }
+        failure {
+            // Ações a serem executadas em caso de falha
         }
     }
 }
