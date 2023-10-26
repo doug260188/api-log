@@ -8,7 +8,7 @@ pipeline {
                 // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                 script {
                     sh 'rm -rf api/'
-                    sh 'git@github.com:doug260188/ngink'
+                    sh 'git clone git@github.com:doug260188/ngink.git'
                     dir('api') {
                         sh 'ls -ltr'
                     }
