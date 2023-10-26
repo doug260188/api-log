@@ -16,17 +16,5 @@ pipeline {
                 }
             }
         }
-        
-        // Outros estágios do seu pipeline podem seguir aqui
-    }
-    
-    post {
-        success {
-            // Ações a serem executadas em caso de sucesso
-        }
-        
-        failure {
-            // Ações a serem executadas em caso de falha
-        }
     }
 }
