@@ -8,7 +8,7 @@ pipeline {
                 // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                 script {
                     sh 'rm -rf api/'
-                    sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
+                    sh 'git@github.com:doug260188/ngink.git'
                     dir('api') {
                         sh 'ls -ltr'
                     }
