@@ -10,7 +10,7 @@ pipeline {
                     
                   
                     // Clone o repositório Azure DevOps via SSH
-                    sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
+                    sh 'git clone git@github.com:doug260188/Mulherpmc.git'
                 }
             }
         }
