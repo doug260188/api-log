@@ -5,10 +5,7 @@ pipeline {
         stage('Clonar Repositório') {
             steps {
                 script {
-                    
-                    // Define as credenciais SSH
-                    def gitCredentials = credentials('7ed72973-12b6-42b4-aea0-cfd9bbd3542d')
-                    
+                                       
                     // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
                     sh 'rm -rf app/'
                     sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/quasar app'
