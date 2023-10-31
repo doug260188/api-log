@@ -1,3 +1,6 @@
+pipeline {
+    agent any
+        
 stages {
         stage('Clone GitHub Repository') {
             steps {
@@ -13,6 +16,7 @@ stages {
                     
                     // Clone o repositório do GitHub via SSH
                     sh "git clone git@github.com:doug260188/Mulherpmc.git ${githubRepoDir}"
+                }
             }
         }
     }
