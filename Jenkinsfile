@@ -6,7 +6,7 @@ stages {
             steps {
                 script {
                     // Define as credenciais SSH para o GitHub
-                    def githubCredentials = credentials('7ed72973-12b6-42b4-aea0-cfd9bbd3542d')
+                    def githubCredentials = credentials('cc74f3ad-077e-453a-b432-3aeb57706ead')
                     
                     // Diretório de trabalho para o repositório do GitHub
                     def githubRepoDir = "${WORKSPACE}/github-repo"
