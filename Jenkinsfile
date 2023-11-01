@@ -24,7 +24,7 @@ pipeline {
         stage('BUILD') {
             steps {
                 //sh ''
-                sh 'docker build -t ${JOB_NAME}:latest -f Dockerfile .'
+                sh 'docker build -t ${JOB_NAME}:latest -f /var/jenkins_home/workspace/teste2/github-repo/api/Dockerfile .'
                 //sh ' rm Docke*'
 
             }
