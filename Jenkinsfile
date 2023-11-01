@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Define as credenciais SSH para o GitHub
-                    def githubCredentials = credentials('cc74f3ad-077e-453a-b432-3aeb57706ead')
+                    def githubCredentials = credentials('205f23ee-800b-4932-833d-dbf989c6d2b4')
                     
                     // Diretório de trabalho para o repositório do GitHub
                     def githubRepoDir = "${WORKSPACE}/github-repo"
