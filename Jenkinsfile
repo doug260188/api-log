@@ -2,7 +2,7 @@ pipeline {
     agent any
         
 stages {
-       stage('Clone GitHub Repository') {
+        stage('Clone GitHub Repository') {
             steps {
                 script {
                     // Define as credenciais SSH para o GitHub
@@ -19,4 +19,5 @@ stages {
                 }
             }
         }
+    }
 }
