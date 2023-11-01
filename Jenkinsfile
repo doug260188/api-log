@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Define as credenciais do Azure DevOps
-                    def azureDevOpsCredentials = credentials('5532e668-9dea-440d-afcb-5e45d1c97774')
+                    def azureDevOpsCredentials = credentials('azuredevops')
                     
                     // Diretório de trabalho para o repositório do Azure DevOps
                     def azureDevOpsRepoDir = "${WORKSPACE}/azure-devops-repo"
