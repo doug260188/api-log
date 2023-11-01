@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Define as credenciais do Azure DevOps
-                    def azureDevOpsCredentials = credentials('cc74f3ad-077e-453a-b432-3aeb57706ead')
+                    def azureDevOpsCredentials = credentials('5532e668-9dea-440d-afcb-5e45d1c97774')
                     
                     // Diretório de trabalho para o repositório do Azure DevOps
                     def azureDevOpsRepoDir = "${WORKSPACE}/azure-devops-repo"
@@ -34,7 +34,7 @@ pipeline {
                     sh "rm -rf ${azureDevOpsRepoDir}"
                     
                     // Clone o repositório do Azure DevOps
-                    sh "git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api ${azureDevOpsRepoDir}"
+                    sh "git clone https://Loglab@dev.azure.com/Loglab/SMGE-MULHER/_git/api ${azureDevOpsRepoDir}"
                 }
             }
         }     
