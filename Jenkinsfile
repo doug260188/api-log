@@ -11,7 +11,7 @@ pipeline {
                     sh 'rm -rf api'
 
                     // Clonar o repositório
-                    sh 'git git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
+                    sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
                 }
             }
         }
