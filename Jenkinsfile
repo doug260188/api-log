@@ -1,34 +1,34 @@
 pipeline {
-    agent any
+    agent {
+        label 'homo'
+    }
 
     stages {
         stage('Clonar Repositório') {
             steps {
                 script {
-                                       
-                    // Substitua 'http://git.cuiaba.mt.gov.br/rodrigo.rodrigues/mulher-pmc/-/tree/main/api' pela URL do seu repositório Git
-                    sh 'rm -rf app/'
-                    sh 'git clone git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/quasar app'
+                    // Remover o diretório se ele já existir
+                    sh 'rm -rf api'
+
+                    // Clonar o repositório
+                    sh 'git git@ssh.dev.azure.com:v3/Loglab/SMGE-MULHER/api'
                 }
             }
         }
 
-    
         stage('BUILD') {
             steps {
-                //sh ''
-                sh '''docker build -t ${JOB_NAME}:latest -f /opt/jenkins-dados/workspace/test1/app/Dockerfile .'''
-                //sh ' rm Docke*'
-
+                dir('api') {
+                    sh 'docker build -t ${JOB_NAME}:latest -f /opt/jenkins-dados/workspace/portal-pmc-holog/Dockerfile .'
+                }
             }
         }
         
         stage('DEPLOY') {
             steps {
-
-                sh '''docker run -itd --restart=always --name ${JOB_NAME} -p909:80 --privileged ${JOB_NAME}:latest'''
-                //sh "docker run -itd --restart=always --name ${JOB_NAME} -p9098:8080 --privileged ${JOB_NAME}:latest"
-
+                dir('api') {
+                    sh 'docker run -itd --restart=always --name ${JOB_NAME} -p2003:80 --privileged portal-pmc-holog:latest'
+                }
             }
         }
     }
